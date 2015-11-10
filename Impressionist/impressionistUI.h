@@ -119,7 +119,7 @@ private:
 	//実習
 	//角度とα値コールバック
 	static void cb_angleSlides(Fl_Widget* o, void* v);
-	static void cb_withSlides(Fl_Widget* o, void* v);
+	static void cb_widthSlides(Fl_Widget* o, void* v);
 };
 
 #endif

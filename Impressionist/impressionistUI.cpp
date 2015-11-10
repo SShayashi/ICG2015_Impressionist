@@ -298,16 +298,16 @@ void ImpressionistUI::setAngle(int angle){
 }
 
 
-int ImpressionistUI::getAngle()
+int ImpressionistUI::getWidth()
 {
 	return m_nWidth;
 }
 
 
-void ImpressionistUI::setAngle(int width){
+void ImpressionistUI::setWidth(int width){
 	m_nWidth=width;
 
-	if(width<=360){
+	if(width<=100){
 		m_BrushWidthSlider->value(m_nWidth);
 	}
 }
@@ -509,6 +509,20 @@ ImpressionistUI::ImpressionistUI() {
 		m_BrushAngleSlider->align(FL_ALIGN_RIGHT);
 		m_BrushAngleSlider->callback(cb_angleSlides);	
 
+		//Lineの幅スライダー
+		m_nWidth=0;				// スライダー初期値
+		m_BrushWidthSlider = new Fl_Value_Slider(10, 160, 300, 20, "Width");  // スライダー
+		m_BrushWidthSlider->user_data((void*)(this));
+		m_BrushWidthSlider->type(FL_HOR_NICE_SLIDER);
+		m_BrushWidthSlider->labelfont(FL_COURIER);
+		m_BrushWidthSlider->labelsize(12);
+		m_BrushWidthSlider->minimum(0);		// スライダー最小値
+		m_BrushWidthSlider->maximum(100);		// スライダー最大値
+		m_BrushWidthSlider->step(1);
+		m_BrushWidthSlider->value(m_nWidth);	// スライダー値の格納場所
+		m_BrushWidthSlider->align(FL_ALIGN_RIGHT);
+		m_BrushWidthSlider->callback(cb_widthSlides);	
+
 
 		//α値スライダー
 
@@ -539,6 +553,11 @@ void ImpressionistUI::cb_copy_image_to_canvas(Fl_Menu_* o, void* v) {
 void ImpressionistUI::cb_angleSlides(Fl_Widget* o, void* v) {
 	((ImpressionistUI*)(o->user_data()))->m_nAngle = int (((Fl_Slider*)o)->value());
 }
+
+void ImpressionistUI::cb_widthSlides(Fl_Widget* o, void* v) {
+	((ImpressionistUI*)(o->user_data()))->m_nWidth = int (((Fl_Slider*)o)->value());
+}
+
 
 
 //Filter Kernerl用

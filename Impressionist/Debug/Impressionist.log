@@ -1,4 +1,4 @@
-﻿2015/11/10 14:43:28 にビルドを開始しました。
+﻿2015/11/11 2:26:44 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "\\fs01\s1513113\Desktop\ICG215\02\Impressionist\Impressionist\Impressionist.vcxproj" (build ターゲット)。
      1>InitializeBuildStatus:
          "AlwaysCreate" が指定されたため "Debug\Impressionist.unsuccessfulbuild" を作成しています。
@@ -34,4 +34,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:08.48
+経過時間 00:00:12.90

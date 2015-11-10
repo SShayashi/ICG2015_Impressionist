@@ -37,7 +37,7 @@ public:
 	int		getSize();						// get the UI size
 	//é¿èK
 	int		getAngle();
-
+	int		getWidth();
 	// get the UI angle
 	void	setSize(int size);		// set the UI size
 
