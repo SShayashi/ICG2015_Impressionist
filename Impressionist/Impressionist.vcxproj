@@ -93,6 +93,7 @@
     <ClInclude Include="originalView.h" />
     <ClInclude Include="paintView.h" />
     <ClInclude Include="pointBrush.h" />
+    <ClInclude Include="ScatteredPointBrush.h" />
     <ClInclude Include="triangleBrush.h" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +108,7 @@
     <ClCompile Include="originalView.cpp" />
     <ClCompile Include="paintView.cpp" />
     <ClCompile Include="pointBrush.cpp" />
+    <ClCompile Include="ScatteredPointBrush.cpp" />
     <ClCompile Include="triangleBrush.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
