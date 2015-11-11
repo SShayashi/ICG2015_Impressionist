@@ -47,8 +47,6 @@ void ScatteredPointBrush::BrushMove( const Point source, const Point target )
 	}
 	
 	int size=pDoc->getSize();
-	int angle=pDoc->getAngle();	// ŒX‚«iAnglej‚ðŽæ“¾
-	int width = pDoc->getWidth();
 	float Ax,Ay;
 	glPointSize(1.0);
 	glBegin(GL_POINTS);
@@ -56,7 +54,7 @@ void ScatteredPointBrush::BrushMove( const Point source, const Point target )
 	
 	for(int i=0; i < 10 ; i++){
 		Ax = target.x - size/2+rand()%size;
-		Ay = target.y - size/2;rand()%size;
+		Ay = target.y - size/2+rand()%size;
 		glVertex2i(Ax , Ay);
 	}
 
