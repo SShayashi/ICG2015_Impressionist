@@ -47,47 +47,15 @@ void ScatteredPointBrush::BrushMove( const Point source, const Point target )
 	}
 	
 	int size=pDoc->getSize();
-	int angle=pDoc->getAngle();	// ŒX‚«iAnglej‚ðŽæ“¾
-	int width = pDoc->getWidth();
-	float Ax,Ay,Bx,By,Cx,Cy,Dx,Dy;
-
-	//
-	if(width <= 1){
-
-		Ax=target.x+size*cos(PI*angle/180);
-		Ay=target.y+size*sin(PI*angle/180);
-
-		Bx=target.x-size*cos(PI*angle/180);
-		By=target.y-size*sin(PI*angle/180);
+	float Ax,Ay;
+	glPointSize(1.0);
+	glBegin(GL_POINTS);
+	SetColor(source);
 	
-		glBegin(GL_LINES);		// ü‚ð•`‰æ
-		SetColor( source );
-		glVertex2d(Ax,Ay);
-		glVertex2d(Bx,By);
-
-	}else{
-
-		Ax=target.x+size*cos(PI*angle/180)-(width/2)*sin(PI*angle/180);
-		Ay=target.y+size*sin(PI*angle/180)+(width/2)*cos(PI*angle/180);
-
-		Dx=target.x+size*cos(PI*angle/180)+(width/2)*sin(PI*angle/180);
-		Dy=target.y+size*sin(PI*angle/180)-(width/2)*cos(PI*angle/180);
-
-
-		Bx=target.x-size*cos(PI*angle/180)-(width/2)*sin(PI*angle/180);
-		By=target.y-size*sin(PI*angle/180)+(width/2)*cos(PI*angle/180);
-	
-		Cx=target.x-size*cos(PI*angle/180)+(width/2)*sin(PI*angle/180);
-		Cy=target.y-size*sin(PI*angle/180)-(width/2)*cos(PI*angle/180);
-
-	
-		glBegin(GL_POLYGON);		// ü‚ð•`‰æ
-		SetColor( source );
-		glVertex2d(Ax,Ay);
-		glVertex2d(Bx,By);
-		glVertex2d(Cx,Cy);
-		glVertex2d(Dx,Dy);	
-
+	for(int i=0; i < 10 ; i++){
+		Ax = target.x - size/2+rand()%size;
+		Ay = target.y - size/2+rand()%size;
+		glVertex2i(Ax , Ay);
 	}
 
 	glEnd();
